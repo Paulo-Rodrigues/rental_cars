@@ -1,0 +1,7 @@
+<% if @subsidiaries.none? %>
+  <p>Nenhuma subsidiaria cadastrada</p>
+<% end %>
+
+<% @subsidiaries.each do |subsidiary| %>
+  <%= link_to subsidiary.name, subsidiary_path(subsidiary) %>
+<% end %>

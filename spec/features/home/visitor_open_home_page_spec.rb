@@ -4,6 +4,7 @@ feature 'Visitor open home page' do
   scenario 'successfully' do
     visit root_path
 
+    # expect(current_path).to eq(car_categories_path)
     expect(page).to have_content('Rental Cars')
     expect(page).to have_content('Bem vindo ao sistema de gestão de locação')
   end
