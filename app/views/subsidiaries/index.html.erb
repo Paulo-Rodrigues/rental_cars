@@ -1,9 +1,19 @@
-<%= link_to 'Registrar uma nova subsidiaria', new_subsidiary_path %>
 
-<% if @subsidiaries.none? %>
-  <p>Nenhuma subsidiaria cadastrada</p>
-<% end %>
+<section class='subsidiaries_links'>
+  <%= link_to 'Registrar uma nova subsidiaria', new_subsidiary_path, class: 'link-btn' %>
+  <%= link_to 'Voltar', root_path, class: 'link-btn' %>
+</section>
 
-<% @subsidiaries.each do |subsidiary| %>
-  <%= link_to subsidiary.name, subsidiary_path(subsidiary) %>
-<% end %>
+<section class='subsidiaries'>
+  <% if @subsidiaries.none? %>
+    <h4>Nenhuma subsidiaria cadastrada</h4>
+  <% end %>
+
+  <ul class="collection with-header subsidiaries_list">
+    <li class="collection-header center"><h4>Categorias</h4></li>
+    <% @subsidiaries.each do |subsidiary| %>
+      <%= link_to subsidiary.name, subsidiary_path(subsidiary), class: 'collection-item' %>
+    <% end %>
+  </ul>
+
+</section>

@@ -1,3 +1,24 @@
-<%= @subsidiary.name %>
-<%= @subsidiary.cnpj %>
-<%= @subsidiary.address %>
+
+<section class='subsidiaries_links'>
+  <%= link_to 'Voltar', subsidiaries_path, class: 'link-btn' %>
+</section>
+
+<section class='subsidiaries'>
+  <table class='striped subsidiaries_list'>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>CNPJ</th>
+      <th>Endereço</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @subsidiary.name %></td>
+      <td><%= @subsidiary.cnpj %></td>
+      <td><%= @subsidiary.address %></td>
+    </tr>
+  </tbody>
+  </table>
+</section>

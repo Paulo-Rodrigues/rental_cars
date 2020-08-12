@@ -1,10 +1,18 @@
-<%= link_to 'Registrar uma nova categoria', new_car_category_path %>
-<% if @car_categories.none? %>
-  <p>Nenhuma categoria cadastrada</p>
-<% end %>
+<section class='car_categories_links'>
+  <%= link_to 'Registrar uma nova categoria', new_car_category_path, class: 'link-btn' %>
+  <%= link_to 'Voltar', root_path, class: 'link-btn' %>
+</section>
 
-<% @car_categories.each do |car_category| %>
-  <%= link_to car_category.name, car_category_path(car_category) %>
-<% end %>
+<section class='car_categories'>
+  <% if @car_categories.none? %>
+    <h4>Nenhuma categoria cadastrada</h4>
+  <% end %>
 
-<%= link_to 'Voltar', root_path %>
+  <ul class="collection with-header car_categories_list">
+    <li class="collection-header center"><h4>Categorias</h4></li>
+    <% @car_categories.each do |car_category| %>
+      <%= link_to car_category.name, car_category_path(car_category), class: 'collection-item' %>
+    <% end %>
+  </ul>
+
+</section>

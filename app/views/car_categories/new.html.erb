@@ -1,4 +1,9 @@
-<%= form_with(model: @car_category, local: true) do |form| %>
+<section class='car_categories_links'>
+  <%= link_to 'Voltar', car_categories_path, class: 'link-btn'%>
+</section>
+
+<section class='car_categories'>
+<%= form_with(model: @car_category, local: true, html: {class: 'car_categories_form'}) do |form| %>
   <p>
     <%= form.label :name, 'Nome' %>
     <%= form.text_field :name %>
@@ -20,6 +25,7 @@
   </p>
 
   <p>
-    <%= form.submit 'Enviar' %>
+    <%= form.submit 'Enviar', class: 'link-btn' %>
   </p>
 <% end %>
+</section>

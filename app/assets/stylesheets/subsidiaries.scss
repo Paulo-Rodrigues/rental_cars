@@ -1,0 +1,17 @@
+@import 'placeholders';
+
+.subsidiaries_links {
+    @extend %navigation_links;
+}
+
+.subsidiaries {
+    @extend %default_body_container;
+}
+
+.subsidiaries_list {
+    @extend %default_list;
+}
+
+.subsidiaries_form {
+    @extend %default_form;
+}

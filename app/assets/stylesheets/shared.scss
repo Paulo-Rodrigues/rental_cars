@@ -1,0 +1,18 @@
+body {
+    background-image: linear-gradient(rgba(128, 128, 128, 0.808), rgba(128, 128, 128, 0.801)),url(bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.link-btn {
+    padding: 15px;
+    background-color: #4a148c;
+    margin: 10px;
+    border-radius: 50px;
+    color: #fff;
+
+    &:hover {
+        background-color: #712fc2;
+    }
+}

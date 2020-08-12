@@ -1,19 +1,25 @@
-<%= @car_category.name %>
-<dl>
-  <dt>Diária</dt>
-  <dd>
-    <%= number_to_currency(@car_category.daily_rate) %>
-  </dd>
+<section class='car_categories_links'>
+  <%= link_to 'Voltar', car_categories_path, class: 'link-btn' %>
+</section>
 
-  <dt>Seguro do Carro</dt>
-  <dd>
-     <%= number_to_currency(@car_category.car_insurance) %>
-  </dd>
+<section class='car_categories'>
+  <table class='striped car_categories_list'>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Diária</th>
+      <th>Seguro do carro</th>
+      <th>Seguro de Terceiros</th>
+    </tr>
+  </thead>
 
-  <dt>Seguro de Terceiros</dt>
-  <dd>
-     <%= number_to_currency(@car_category.third_party_insurance) %>
-  </dd>
-</dl>
-
-<%= link_to 'Voltar', car_categories_path %>
+  <tbody>
+    <tr>
+      <td><%= @car_category.name %></td>
+      <td><%= number_to_currency(@car_category.daily_rate) %></td>
+      <td><%= number_to_currency(@car_category.car_insurance) %></td>
+      <td><%= number_to_currency(@car_category.third_party_insurance) %></td>
+    </tr>
+  </tbody>
+  </table>
+</section>
