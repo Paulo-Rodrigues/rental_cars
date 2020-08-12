@@ -26,4 +26,18 @@ feature 'Admin register car category' do
     expect(page).to have_content('R$ 50,00')
     expect(page).to have_content('R$ 10,00')
   end
+
+  scenario 'failures' do
+    visit root_path
+    click_on 'Categorias'
+    click_on 'Registrar uma nova categoria'
+
+    fill_in 'Nome', with: ''
+    fill_in 'Diária', with: ''
+    fill_in 'Seguro do carro', with: ''
+    fill_in 'Seguro para terceiros', with: ''
+    click_on 'Enviar'
+
+    expect(page).to have_content('não pode ficar em branco', count: 4) 
+  end
 end
