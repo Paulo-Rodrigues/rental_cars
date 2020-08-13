@@ -1,5 +1,7 @@
 <section class='car_categories_links'>
   <%= link_to 'Voltar', car_categories_path, class: 'link-btn' %>
+  <%= link_to 'Editar', edit_car_category_path(@car_category), class: 'link-btn' %>
+  <%= link_to 'Apagar', car_category_path(@car_category), method: :delete %>
 </section>
 
 <section class='car_categories'>
