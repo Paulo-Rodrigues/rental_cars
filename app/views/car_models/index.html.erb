@@ -1,5 +1,5 @@
 <% @car_models.each do |car_model| %>
-  <p><%= car_model.name %></p>
+  <p><%= link_to car_model.name, car_model %></p>
   <p><%= car_model.year %></p>
   <p><%= car_model.manufacturer %></p>
 <% end %>
