@@ -6,4 +6,8 @@ class CarModelsController < ApplicationController
   def show
     @car_model = CarModel.find(params[:id])
   end
+
+  def new
+    @car_model = CarModel.new
+  end
 end

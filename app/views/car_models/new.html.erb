@@ -1,0 +1,16 @@
+<%= form_with(model: @car_model, local: true) do |form| %>
+  <%= form.label :name, 'Nome' %>
+  <%= form.text_field :name %>
+
+  <%= form.label :year, 'Ano' %>
+  <%= form.text_field :year %>
+
+  <%= form.label :manufacturer, 'Fabricante' %>
+  <%= form.text_field :manufacturer %>
+
+  <%= form.label :fuel_type, 'Tipo de combustível' %>
+  <%= form.text_field :fuel_type %>
+
+  <%= form.label :motorization, 'Cavalos' %>
+  <%= form.text_field :motorization %>
+<% end %>
