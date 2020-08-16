@@ -5,7 +5,9 @@ class CarCategoriesController < ApplicationController
     @car_categories = CarCategory.all
   end
 
-  def show; end
+  def show
+    @car_models = @car_category.car_models
+  end
 
   def new
     @car_category = CarCategory.new

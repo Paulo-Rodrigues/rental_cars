@@ -24,4 +24,12 @@
     </tr>
   </tbody>
   </table>
+
+  <section>
+    <% @car_models.each do |car_model| %>
+      <%= car_model.name %>
+      <%= car_model.year %>
+      <%= car_model.fuel_type %>
+    <% end %>
+  </section>
 </section>
