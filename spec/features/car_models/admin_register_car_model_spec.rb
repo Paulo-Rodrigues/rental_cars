@@ -2,6 +2,8 @@ require 'rails_helper'
 
 feature 'Admin register car model', type: :feature do
   scenario 'successfully' do
+    CarCategory.create!(name: 'Economico', daily_rate: 105.5, car_insurance: 58.5,
+                        third_party_insurance: 10.5)
     visit root_path
 
     click_on 'Modelos de carro'
@@ -12,7 +14,7 @@ feature 'Admin register car model', type: :feature do
     fill_in 'Fabricante', with: 'Volkswagen'
     fill_in 'Cavalos', with: '1.0'
     fill_in 'Tipo de combustível', with: 'Gasolina'
-    fill_in 'Categoria', with: ''
+    select 'Economico', from: 'Categoria'
 
     click_on 'Enviar'
     

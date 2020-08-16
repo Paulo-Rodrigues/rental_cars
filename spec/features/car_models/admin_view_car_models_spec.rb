@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 feature 'Admin view car models', type: :feature do
+  scenario 'empty list of car models' do
+    visit root_path
+    click_on 'Modelos de carro'
+
+    expect(page).to have_content('Nenhum modelo de carro cadastrado')
+  end
+
   scenario 'list of car models' do
     car_category = CarCategory.create!(name: 'Economic', daily_rate: 105.5, car_insurance: 58.5,
 third_party_insurance: 10.5)

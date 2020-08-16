@@ -1,0 +1,17 @@
+@import 'placeholders';
+
+.car_models_links {
+    @extend %navigation_links;
+}
+
+.car_models {
+    @extend %default_body_container;
+}
+
+.car_models_list {
+    @extend %default_list;
+}
+
+.car_models_form {
+    @extend %default_form;
+}

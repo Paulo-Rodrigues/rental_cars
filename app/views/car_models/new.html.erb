@@ -1,16 +1,41 @@
-<%= form_with(model: @car_model, local: true) do |form| %>
-  <%= form.label :name, 'Nome' %>
-  <%= form.text_field :name %>
+<section class='car_models_links'>
+  <%= link_to 'Voltar', car_models_path, class: 'link-btn'%>
+</section>
 
-  <%= form.label :year, 'Ano' %>
-  <%= form.text_field :year %>
+<section class='car_models'>
+<%= form_with(model: @car_model, local: true, html: {class: 'car_models_form'}) do |form| %>
+  <p>
+    <%= form.label :name, 'Nome' %>
+    <%= form.text_field :name %>
+  </p>
+  
+  <p>
+    <%= form.label :year, 'Ano' %>
+    <%= form.text_field :year %>
+  </p>
 
-  <%= form.label :manufacturer, 'Fabricante' %>
-  <%= form.text_field :manufacturer %>
+  <p>
+    <%= form.label :manufacturer, 'Fabricante' %>
+    <%= form.text_field :manufacturer %>
+  </p>
 
-  <%= form.label :fuel_type, 'Tipo de combustível' %>
-  <%= form.text_field :fuel_type %>
+  <p>
+    <%= form.label :fuel_type, 'Tipo de combustível' %>
+    <%= form.text_field :fuel_type %>
+  </p>
 
-  <%= form.label :motorization, 'Cavalos' %>
-  <%= form.text_field :motorization %>
+  <p>
+    <%= form.label :motorization, 'Cavalos' %>
+    <%= form.text_field :motorization %>
+  </p>
+
+  <p>
+    <%= form.label :car_category_id, 'Categoria' %>
+    <%= form.collection_select :car_category_id, CarCategory.order(:name), :id, :name %>
+  </p>
+
+  <p>
+    <%= form.submit 'Enviar', class: 'link-btn' %>
+  </p>
 <% end %>
+</section>

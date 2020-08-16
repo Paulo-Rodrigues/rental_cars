@@ -7,7 +7,7 @@ feature 'Admin edit subsidiary', type: :feature do
     click_on 'Registrar uma nova subsidiaria'
 
     fill_in 'Nome', with: 'Filial 1'
-    fill_in 'CNPJ', with: '567327662'
+    fill_in 'CNPJ', with: "84.769.501/5614-04"
     fill_in 'Endereço', with: 'rua xxxx nº xxx'
     click_on 'Enviar'
   end
