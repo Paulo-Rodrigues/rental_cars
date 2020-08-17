@@ -9,6 +9,7 @@ class CarModelsController < ApplicationController
 
   def new
     @car_model = CarModel.new
+    @car_categories = CarCategory.order(:name)
   end
 
   def create
