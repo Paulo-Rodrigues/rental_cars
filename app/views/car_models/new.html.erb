@@ -4,6 +4,16 @@
 
 <section class='car_models'>
 <%= form_with(model: @car_model, local: true, html: {class: 'car_models_form'}) do |form| %>
+
+  
+  <% if @car_model.errors.any? %>
+    <ul>
+      <% @car_model.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <p>
     <%= form.label :name, 'Nome' %>
     <%= form.text_field :name %>
@@ -31,7 +41,7 @@
 
   <p>
     <%= form.label :car_category_id, 'Categoria' %>
-    <%= form.collection_select :car_category_id, CarCategory.order(:name), :id, :name %>
+    <%= form.collection_select :car_category_id, @car_categories, :id, :name %>
   </p>
 
   <p>

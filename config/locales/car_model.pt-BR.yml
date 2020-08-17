@@ -1,0 +1,18 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      car_model: 
+        one: 'Modelo de carro'
+        other: 'Modelos de carro'
+    attributes:
+      car_model:
+        name: 'Nome'
+        year: 'Ano'
+        fuel_type: 'Tipo de combustível'
+        manufacturer: 'Fabricante'
+        motorization: 'Motorização'
+        car_category_id: 'Categoria de carro'
+        car_category: 'Categoria de carro'
+
+
