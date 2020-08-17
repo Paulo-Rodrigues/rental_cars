@@ -1,6 +1,29 @@
-<%= @car_model.name %>
-<%= @car_model.year %>
-<%= @car_model.manufacturer %>
-<%= @car_model.fuel_type %>
-<%= @car_model.motorization %>
-<%= @car_model.car_category.name %>
+<section class='car_models_links'>
+  <%= link_to 'Voltar', car_models_path, class: 'link-btn' %>
+</section>
+
+<section class='car_models'>
+  <table class='striped subsidiaries_list'>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Ano</th>
+      <th>Fabricante</th>
+      <th>Tipo de combustível</th>
+      <th>Motor</th>
+      <th>Categoria</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @car_model.name %></td>
+      <td><%= @car_model.year %></td>
+      <td><%= @car_model.manufacturer %></td>
+      <td><%= @car_model.fuel_type %></td>
+      <td><%= @car_model.motorization %></td>
+      <td><%= @car_model.car_category.name %></td>
+    </tr>
+  </tbody>
+  </table>
+</section>

@@ -6,6 +6,7 @@
 
 .car_models {
     @extend %default_body_container;
+    height: 30vh;
 }
 
 .car_models_list {
