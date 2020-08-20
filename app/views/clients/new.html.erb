@@ -1,4 +1,12 @@
 <%= form_with(model: @client, local: true) do|form| %>
+  <% if @client.errors.any? %>
+    <ul>
+      <% @client.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <%= form.label :name, 'Nome' %>
   <%= form.text_field :name %>
   <%= form.label :cpf, 'CPF' %>

@@ -25,4 +25,20 @@ feature 'Admin register a client' do
     expect(page).to have_content('client@test.com')
     expect(page).to have_content('910.703.810-04')
   end
+
+  scenario 'client must be valid' do
+    user = User.create!(name: 'Username', email: 'test@test.com', password: 'password')
+    login_as(user, scope: :user)
+    
+    visit root_path
+    click_on 'Clientes'
+    click_on 'Cadastrar novo cliente'
+
+    fill_in 'Nome', with: ''
+    fill_in 'CPF', with: ""
+    fill_in 'Email', with: ''
+    click_on 'Enviar'
+
+    expect(page).to have_content('não pode ficar em branco', count: 3)
+  end
 end
