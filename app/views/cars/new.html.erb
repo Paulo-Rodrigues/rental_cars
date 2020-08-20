@@ -1,0 +1,24 @@
+<%= form_with(model: @car, local: true) do |form| %>
+  <% if @car.errors.any? %>
+    <% @car.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+
+  <%= form.label :license_plate, 'Placa' %>
+  <%= form.text_field :license_plate %>
+
+  <%= form.label :color, 'Cor' %>
+  <%= form.text_field :color %>
+
+  <%= form.label :mileage, 'Quilometragem' %>
+  <%= form.text_field :mileage %>
+
+  <%= form.label :car_model_id, 'Modelo de carro' %>
+  <%= form.collection_select :car_model_id, CarModel.all, :id, :name %>
+
+  <%= form.label :subsidiary_id, 'Filial' %>
+  <%= form.collection_select :subsidiary_id, Subsidiary.all, :id, :name %>
+
+  <%= form.submit 'Enviar' %>
+<% end %>
