@@ -1,7 +1,16 @@
 require 'rails_helper'
 
 feature 'Admin view car models', type: :feature do
+  scenario 'must be authenticated' do
+    visit root_path
+    click_on 'Modelos de carro'
+
+    expect(current_path).to eq(new_user_session_path)
+  end
+
   scenario 'empty list of car models' do
+    user = User.create!(name: 'Username', email: 'test@test.com', password: 'password')
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Modelos de carro'
 
@@ -9,6 +18,8 @@ feature 'Admin view car models', type: :feature do
   end
 
   scenario 'list of car models' do
+    user = User.create!(name: 'Username', email: 'test@test.com', password: 'password')
+    login_as(user, scope: :user)
     car_category = CarCategory.create!(name: 'Economic', daily_rate: 105.5, car_insurance: 58.5,
 third_party_insurance: 10.5)
     CarModel.create!(name: 'Uno', year: 1990, manufacturer: 'Fiat', motorization: '1.0', car_category_id: car_category.id, fuel_type: 'gasoline' )
@@ -26,6 +37,8 @@ third_party_insurance: 10.5)
   end
 
   scenario 'details of car models' do
+    user = User.create!(name: 'Username', email: 'test@test.com', password: 'password')
+    login_as(user, scope: :user)
     car_category = CarCategory.create!(name: 'Economic', daily_rate: 105.5, car_insurance: 58.5,
 third_party_insurance: 10.5)
     CarModel.create!(name: 'Beatle', year: 1963, manufacturer: 'Volkswagen', motorization: '1.0', car_category_id: car_category.id, fuel_type: 'gasoline' )
