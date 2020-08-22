@@ -10,6 +10,12 @@
     <%= link_to 'Entrar', new_user_session_path %>
   <% end %>
 
+  <%= form_with(url: search_path, method: :get) do %>
+    <%= label_tag(:q, "Procurar") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Pesquisar") %>
+  <% end %>
+
   <%= link_to 'Categorias', car_categories_path, class: 'link-btn' %>
   <%= link_to 'Subsidiarias', subsidiaries_path, class: 'link-btn' %>
   <%= link_to 'Modelos de carro', car_models_path, class: 'link-btn' %>

@@ -1,0 +1,8 @@
+<% if @search_result.none? %>
+  <p>Não encontrado</p>
+<% end %>
+
+<% @search_result.each do |result| %>
+  <p><%= result.name %></p>
+  <p><%= result.cpf %></p>
+<% end %>
