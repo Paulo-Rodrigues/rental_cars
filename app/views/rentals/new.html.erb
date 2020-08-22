@@ -1,0 +1,21 @@
+<%= form_with(model: @rental, local: true) do |form| %>
+  <% if @rental.errors.any? %>
+    <% @rental.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
+  <% end %>
+
+  <%= form.label :start_date, 'Data de inicio' %>
+  <%= form.date_field :start_date %>
+
+  <%= form.label :end_date, 'Data de término' %>
+  <%= form.date_field :end_date %>
+
+  <%= form.label :client_id, 'Cliente' %>
+  <%= form.collection_select :client_id, Client.all, :id, :information %>
+
+  <%= form.label :car_category_id, 'Categoria de carro' %>
+  <%= form.collection_select :car_category_id, CarCategory.all, :id, :name %>
+
+  <%= form.submit 'Agendar' %>
+<% end %>

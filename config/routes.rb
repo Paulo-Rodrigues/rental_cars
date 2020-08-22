@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :car_categories
   resources :car_models, only: [:index, :show, :new, :create]
   resources :cars, only: [:new, :show, :create]
+  resources :rentals, only: [:index, :show, :new, :create]
   root to: 'home#index'
 end

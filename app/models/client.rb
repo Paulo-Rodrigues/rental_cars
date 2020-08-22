@@ -4,6 +4,10 @@ class Client < ApplicationRecord
   validates :cpf, length: {is: 14}
   validate :cpf_valid
 
+  def information
+    "#{name} - #{cpf}"
+  end
+
   def cpf_valid
     if cpf.present? && !CPF.valid?(cpf)
       errors.add(:cpf, 'não válido')
