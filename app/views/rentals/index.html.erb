@@ -1,1 +1,12 @@
 <%= link_to 'Agendar nova locação', new_rental_path %>
+
+<% if @rentals.none? %>
+  <p>Não há locações agendadas</p>
+<% end %>
+
+<% @rentals.each do |rental| %>
+  <p><%= rental.client.name %></p>
+  <p><%= rental.car_category.name %></p>
+  <p><%= rental.start_date %></p>
+  <p><%= rental.end_date %></p>
+<% end %>
