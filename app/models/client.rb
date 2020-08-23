@@ -4,6 +4,12 @@ class Client < ApplicationRecord
   validates :cpf, length: {is: 14}
   validate :cpf_valid
 
+  private
+
+  def self.search(term)
+    where('name like ? or cpf = ?', "%#{term}%", term)
+  end
+
   def information
     "#{name} - #{cpf}"
   end

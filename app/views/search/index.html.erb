@@ -2,7 +2,15 @@
   <p>Não encontrado</p>
 <% end %>
 
-<% @search_result.each do |result| %>
-  <p><%= result.name %></p>
-  <p><%= result.cpf %></p>
+<% @search_clients.each do |client| %>
+  <p><%= client.name %></p>
+  <p><%= client.cpf %></p>
+<% end %>
+
+<% @search_rentals.each do |rental| %>
+  <p><%= rental.start_date %></p>
+  <p><%= rental.end_date %></p>
+  <p><%= rental.client.name %></p>
+  <p><%= rental.car_category.name %></p>
+  <p><%= rental.rental_code %></p>
 <% end %>

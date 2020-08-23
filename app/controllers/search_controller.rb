@@ -1,5 +1,9 @@
 class SearchController < ApplicationController
   def index
-    @search_result = Client.where('name like ? or cpf = ?', "%#{params[:q]}%", params[:q])
+    clients = Client.search(params[:q])
+    rentals = Rental.search(params[:q])
+    @search_result = clients + rentals
+    @search_clients = clients
+    @search_rentals = rentals
   end
 end
