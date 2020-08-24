@@ -3,11 +3,13 @@
 <% end %>
 
 <% @search_clients.each do |client| %>
+  <%= link_to "#{client.name} - #{client.cpf}", client %>
   <p><%= client.name %></p>
   <p><%= client.cpf %></p>
 <% end %>
 
 <% @search_rentals.each do |rental| %>
+  <%= link_to "Locação #{rental.rental_code}", rental %>
   <p><%= rental.start_date %></p>
   <p><%= rental.end_date %></p>
   <p><%= rental.client.name %></p>
