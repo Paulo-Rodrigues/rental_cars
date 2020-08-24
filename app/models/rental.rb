@@ -7,7 +7,7 @@ class Rental < ApplicationRecord
 
   validates :start_date, :end_date, presence: true
 
-  after_initialize :set_rental_code
+  before_create :set_rental_code
 
   def total
     rent_days = end_date - start_date
@@ -17,7 +17,7 @@ class Rental < ApplicationRecord
 
   private
   def set_rental_code
-    self.rental_code ||= SecureRandom.alphanumeric(8)
+    self.rental_code ||= SecureRandom.alphanumeric(8).upcase
   end
 
   def self.search(term)
