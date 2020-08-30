@@ -1,7 +1,17 @@
 <%= l  @rental.start_date %>
 <%= l @rental.end_date %>
 <%= @rental.client.name %>
+<%= @rental.client.email %>
 <%= @rental.client.cpf %>
 <%= @rental.car_category.name %>
 <%= number_to_currency @rental.total %>
+<%= @rental.user.email %>
+
+<% if @rental.car_rental %>
+  <h2>Locação iniciada</h2>
+  Carro escolhido: <%= @rental.car_rental.car.description %>
+<% else %>
+  <%= link_to 'Iniciar locação', new_rental_car_rental_path(@rental) %>
+<% end %>
+
 

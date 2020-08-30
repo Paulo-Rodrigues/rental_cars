@@ -39,5 +39,17 @@ third_party_insurance: 10.5)
 
       expect(car.errors[:license_plate]).to include('já está em uso')
     end
+
+    it 'description' do
+    car_category = CarCategory.create!(name: 'Econômico', daily_rate: 105.5, car_insurance: 58.5,
+third_party_insurance: 10.5)
+    car_model = CarModel.create!(name: 'Uno', year: 2018, manufacturer: 'Fiat', motorization: '1.0', car_category_id: car_category.id, fuel_type: 'gasoline' )
+    subsidiary = Subsidiary.create!(name: 'Filial 1', cnpj: '59.541.264/0001-03', address: 'address filial 1')
+    
+      car = Car.new(license_plate: 'LOP4148', color: 'Preta', mileage: 10, car_model: car_model, subsidiary: subsidiary)
+
+
+      expect(car.description).to eq('Uno - Preta - LOP4148')
+    end
   end
 end
