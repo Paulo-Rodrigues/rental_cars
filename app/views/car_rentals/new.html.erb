@@ -1,5 +1,7 @@
 <%= form_with(model: [@rental, @car_rental], local: true) do |form| %>
   <%= form.label :car_id , 'Carros disponiveis'%>
   <%= form.collection_select :car_id, @available_cars, :id, :description %>
+  <%= form.label :driver_license, 'CNH' %>
+  <%= form.text_field :driver_license %>
   <%= form.submit 'Inicio' %>
 <% end %>

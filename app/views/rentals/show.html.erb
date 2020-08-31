@@ -10,6 +10,9 @@
 <% if @rental.car_rental %>
   <h2>Locação iniciada</h2>
   Carro escolhido: <%= @rental.car_rental.car.description %>
+  CNH do condutor: <%= @rental.car_rental.driver_license %>
+  Usuario: <%= @rental.car_rental.user.email %>
+  Inicio da locação: <%= l @rental.car_rental.start_date %>
 <% else %>
   <%= link_to 'Iniciar locação', new_rental_car_rental_path(@rental) %>
 <% end %>
